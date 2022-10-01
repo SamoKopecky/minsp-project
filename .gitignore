@@ -84,7 +84,6 @@ acs-*.bib
 *.mp
 *.t[1-9]
 *.t[1-9][0-9]
-*.tfm
 
 #(r)(e)ledmac/(r)(e)ledpar
 *.end
@@ -275,3 +274,5 @@ TSWLatexianTemp*
 # Makeindex log files
 *.lpz
 main.pdf
+prace.pdf
+obhaj.pdf

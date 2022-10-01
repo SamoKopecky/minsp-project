@@ -1,1 +1,1 @@
-# minsp-project
+# minsP Projekt

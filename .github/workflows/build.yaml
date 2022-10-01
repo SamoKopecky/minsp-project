@@ -14,7 +14,7 @@ jobs:
       - name: Build and publish
         uses: SamoKopecky/.github/.github/actions/publish-pdf-from-tex@main
         with:
-          file_name: main
+          file_name: prace
           github_token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.event.client_payload.repository }}
 
