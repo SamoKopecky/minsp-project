@@ -1,34 +1,71 @@
 \chapter{Proces predaja}
 
+Keďže neplánujem vytvárať klasický e-shop, namiesto procesa predaja produktu som vytvoril ECC (obrázky \ref{ecc:1}, \ref{ecc:2}, \ref{ecc:3}) diagram a TODO tabuľku ktoré proces predaja služby nasadenia informačného systému s pomocou kubernetes.
+
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.5\textwidth]{images/EPC_1.pdf}
   \caption{EPC Prvá časť}
+  \label{ecc:1}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\textwidth]{images/EPC_2.pdf}
   \caption{EPC Druhá časť}
+  \label{ecc:2}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\textwidth]{images/EPC_3.pdf}
   \caption{EPC Tretia časť}
+  \label{ecc:3}
 \end{figure}
 
-\begin{table}[htbp]
+% \begin{landscape}
+% \begin{table}[htbp]
+%   \centering
+%   \caption{a}
+%   \begin{tabular}{|l|c|c|c|c|}
+%     \hline
+%     \multirow{2}*{Procesné role}  & Živnostník     & Zákazník & Admistrátor & Portál na HW \\
+%     \hline
+%     \cline{1-2} & a & 256      & a           & a            \\
+%     \hline
+%     a & b & 256      & a           & a            \\
+%     \hline
+%     a & b & 256      & a           & a            \\
+%     \hline
+%   \end{tabular}
+% \end{table}
+% \begin{table}[h]
+%   \centering
+%   \begin{tabular}{|c|c|c|c|c|c|}
+%     \hline
+%     Výkon signálu $P_S$ [W] & Výkon šumu $P_N$ [W] & $SNR$ [dB]    & $BER$ [\%] \\
+%     \hline
+%     \multirow{3}*{1}        & 4                    & -6.0206       & 0          \\
+%     \cline{2-4}             & 8                    & \cb{-9.0309}  & \cb{0.2}   \\
+%     \cline{2-4}             & 16                   & \cb{-12.0412} & \cb{1.2}   \\
+%     \hline
+%   \end{tabular}
+%   \caption{Závislost BER přenosu s QPSK na odstupu signál-šum pro 1000 přenesených bitů}
+% \end{table}
+% \end{landscape}
+
+
+\begin{table}[h]
   \centering
-  \caption{a}
-  \begin{tabular}{|l|c|c|c|c|}
+  \begin{tabular}{|c|c|c|c|c|c|}
     \hline
-    Procesné role & Živnostník & Zákazník & Admistrátor & Portál na HW \\
+    Výkon signálu $P_S$ [W] & Výkon šumu $P_N$ [W] & $SNR$ [dB] & $BER$ [\%] \\
     \hline
+    \multirow{3}{*}{1}        & 4                    & -6.0206       & 0b          \\
+    \cline{2-4}             & 8                    & -9.0309  & 0.2   \\
+    % \cline{2-4}             & 16                   & -12.041 & 1.2   \\
     \hline
-    Popis aktivity & Merkle–Damgård & 256 & a & a \\
-    \hline
-    
   \end{tabular}
+  \caption{Závislost BER přenosu s QPSK na odstupu signál-šum pro 1000 přenesených bitů}
 \end{table}
 
