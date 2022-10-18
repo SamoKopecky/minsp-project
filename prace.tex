@@ -12,6 +12,7 @@
 \usepackage[utf8]		  %	Kódování zdrojových souborů je UTF-8
 	{inputenc}					% Balíček pro nastavení kódování zdrojových souborů
 
+
 \usepackage[				% Nastavení geometrie stránky
 	bindingoffset=10mm,		% Hřbet pro vazbu
 	hmargin={25mm,25mm},	% Vnitřní a vnější okraj
@@ -46,7 +47,7 @@
 
 \usepackage{enumitem} % Balíček pro nastavení mezerování v odrážkách
   \setlist{topsep=0pt,partopsep=0pt,noitemsep} % konkrétní nastavení
-
+\usepackage{multirow}
 \usepackage{cmap} 		% Balíček cmap zajišťuje, že PDF vytvořené `pdflatexem' je
 											% plně "prohledávatelné" a "kopírovatelné"
 
@@ -105,6 +106,23 @@
     {Ž}{{\v{Z}}}1
 }
 \usepackage{listings}
+\usepackage{lscape}
+
+% Make multicolumn and multirow work in slovak language
+\makeatletter
+\begingroup
+\toks0=\expandafter{\@cline{#1}-{#2}\@nil}
+\@ifpackageloaded{booktabs}{%
+  \toks2=\expandafter{\@@@cmidrule[{#1}-{#2}]{#3}{#4}}%
+}{}
+\catcode`-=\active
+\edef\x{\gdef\unexpanded{\@cline#1-#2\@nil}{\the\toks0}}\x
+\@ifpackageloaded{booktabs}{%
+  \edef\x{\gdef\unexpanded{\@@@cmidrule[#1-#2]#3#4}{\the\toks2}}\x
+}{}
+\endgroup
+\makeatother
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%      Definice informací o dokumentu             %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -137,7 +155,6 @@
 
 \maketitle
 \cleardoublepage\pagestyle{plain} 
-
 %% Vysázení obsahu
 \tableofcontents
 
