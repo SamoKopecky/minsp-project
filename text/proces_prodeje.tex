@@ -27,36 +27,36 @@ Keďže neplánujem vytvárať klasický e-shop, namiesto procesa predaja produk
 \begin{landscape}
 \begin{table}[htbp]
   \centering
-  \begin{tabular}{|l|c|c|c|c|c|}
+  \begin{tabular}{|l|c|c|c|c|c|c|}
       \hline
-      & \multirow{2}*{\textbf{Procesné role}} & \multirow{4}*{\textbf{Živnostník}} & \multirow{4}*{\textbf{Zákazník}} & \multirow{4}*{\textbf{Administrátor}} & \multirow{4}*{\textbf{Portál na prenjatie HW}} \\
-       &  &  &  &  &  \\
-       \cline{1-2}\multirow{2}*{\textbf{Popis aktivity}} &  &  &  &  &  \\
-       &  &  &  &  &  \\
+      & \multirow{2}*{\textbf{Procesné role}} & \multirow{4}*{\textbf{Živnostník}} & \multirow{4}*{\textbf{Zákazník}} & \multirow{4}*{\textbf{Administrátor}} & \multirow{4}*{\textbf{Developer}} & \multirow{4}*{\textbf{HW portál}}\\
+       &  &  &  &  &  & \\
+       \cline{1-2}\multirow{2}*{\textbf{Popis aktivity}} &  &  &  &  &  & \\
+       &  &  &  &  &  & \\
       \hline 
-      \multicolumn{2}{|l|}{Kontaktovanie cez webovú stránku} & & R &  &  \\
+      \multicolumn{2}{|l|}{Kontaktovanie cez webovú stránku} &  & R &  &  & \\
       \hline 
-      \multicolumn{2}{|l|}{Vyplnenie formulára pre popis informačného systému} & R & I &  &  \\
+      \multicolumn{2}{|l|}{Vyplnenie formulára pre popis informačného systému} & I & R &  &  & \\
       \hline 
-      \multicolumn{2}{|l|}{Dohoda na cene a upresnenie služby} & R & R &  &  \\
+      \multicolumn{2}{|l|}{Dohoda na cene a upresnenie služby} & R & R &  &  & \\
       \hline 
-      \multicolumn{2}{|l|}{Jednorázová platba} & A & I &  &  \\
+      \multicolumn{2}{|l|}{Jednorázová platba} & I & A &  &  & \\
       \hline 
-      \multicolumn{2}{|l|}{Získanie prístupu na HW/virtuálen prostredie} & R & C & R &  \\
+      \multicolumn{2}{|l|}{Získanie prístupu na HW/virtuálne prostredie} & R &  & A &  & \\
       \hline 
-      \multicolumn{2}{|l|}{Príprava prostredia} &  & A & I &  \\
+      \multicolumn{2}{|l|}{Príprava prostredia} & A &  & I &  & \\
       \hline 
-      \multicolumn{2}{|l|}{Prenajatie a príprava virtuálneho prostredia} & C & R &  & A \\
+      \multicolumn{2}{|l|}{Prenajatie a príprava virtuálneho prostredia} & R & C &  &  & A\\
       \hline 
-      \multicolumn{2}{|l|}{Nastavenie mesačnej platby} & I & R &  &  \\
+      \multicolumn{2}{|l|}{Nastavenie mesačnej platby} &  & R &  &  & I\\
       \hline 
-      \multicolumn{2}{|l|}{Nasadenie informačného systému na Kubernetes} & A & I & I &  \\
+      \multicolumn{2}{|l|}{Nasadenie informačného systému na Kubernetes} & R, A & I & I & I & \\
       \hline 
-      \multicolumn{2}{|l|}{Vytvorenie dokumentácie} & R &  &  &  \\
+      \multicolumn{2}{|l|}{Vytvorenie dokumentácie} & R &  &  &  & \\
       \hline 
-      \multicolumn{2}{|l|}{Vytvorenie status stránky a kustomizácia} & R &  & I &  \\
+      \multicolumn{2}{|l|}{Vytvorenie status stránky a kustomizácia} & R &  & I &  & \\
       \hline 
-      \multicolumn{2}{|l|}{Pravidelná údržba, reakcia na udalosti} & R & I & I &  \\
+      \multicolumn{2}{|l|}{Pravidelná údržba, reakcia na udalosti} & R & I & I &  & \\
       \hline 
   \end{tabular}
   \caption{RACI matica}
