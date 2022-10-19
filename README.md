@@ -13,5 +13,5 @@ Install the required dependencies using [this guide](https://gist.github.com/oga
 To generate a pdf run:
 
 ```sh
-latexmk -pdf prace.pdf
+latexmk -pdf prace.tex
 ```
