@@ -1,1 +1,52 @@
 \chapter{Výber systému}
+
+Systém pomocou ktorého budem ponúkať služby si naprogramujem sám keďže jeho obsah bude relatívne malý. Bude sa skladať z nasledovných častí:
+
+\begin{itemize}
+  \item Formulár na vyplnenie objednávky
+  \item Platobná brána pre jednorázovú platbu
+  \item Platobná brána pre opakovanú platbu
+  \item Stránka z popisom mojich služieb
+\end{itemize}
+
+Na implementáciu samotnej web aplikácie použijem Vue \cite{vue} a Node.js \cite{Node} javascript frameworky. Databáza nebude potrebná keďže stránka nebude použivať žiadne perzistenté dáta.
+
+Toto riešenie som si vybral pretože mám skúsenosti z web developmentom a neoplatí sa mi prenajímať celí e-shop keďže ponúkam služby a nie fyzický produkt.
+
+\section{Výber virtualného prostredia}
+
+Aby som mohol svoj systém mať prístupný, budem si musieť prenajať virtuálny server kde nasadím môj systém. Nebudem potrebovať veľký výkon keďže očakávam že na začiaktu nebudem počet objenávok veľký. Ak sa počet návštev zvečší, použijem lepšie parametre. Tabuľka \ref{serveri} popisuje kritéria výberu jednodlivý systémov. Pre každý systém som si zvolil tieto alebo podobné parametre:
+
+\begin{itemize}
+  \item CPU -- 2 jadrá
+  \item CPU frekvencia -- 2-2.5\,Ghz
+  \item Disk -- 20-50\,GB
+\end{itemize}
+Každá hodnota je obodovaná stupnicou -10 po 10. V prvom stĺpci je súčet všetkých hodnotení v riadku. Z tabulky je zrejmé že Linode vyhráva a budem ho teda používať ako virtuálny server pre moju stránku.
+
+
+\begin{landscape}
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{|c|l|c|c|c|c|c|c|}
+    \hline
+    Body & Názov & Cena za mesiac & Ram & Prenos dát & In/Out rýchlosť  & Poznámka\\
+    \hline
+    (25) & \textbf{Linode} & 10.14\,\texteuro\ (9)  & 2\,GB (7) & 2 TB (6) & 40/1 Gbps (8) & Zdielané CPU (-3) \\
+    \hline
+    (24) & Kametra & 6.08\,\texteuro\ (10) & 2\,GB (7) & 1 TB (5) & 10/10 Gbps (7) & Zdielané CPU (-3) \\
+    \hline
+    (18) & Liquidweb & 25.35\,\texteuro\ (2) & 2\,GB (7) & 10 TB (9) & - (0) & - (0) \\
+    \hline
+    (18) & CloudSigma  & 20\,\texteuro\ (4) & 4\,GB (8) & 5 TB (7) & Unlimited (-1) & - (0) \\
+    \hline
+    (20) & Amazon Ligthsail & 20.28\,\texteuro\ (3)  & 4\,GB (8) & 3 TB (5) & 900/900 Mbps (4) & - (0) \\
+    \hline
+    (22) & Vultr  & 20.28\,\texteuro\ (3) & 4\,GB (8) & 3 TB (5) & 2/2 Gbps (6) & - (0) \\
+    \hline
+  \end{tabular}
+  \caption{Porovnanie ponúk}
+  \label{serveri}
+\end{table}
+\end{landscape}
+
