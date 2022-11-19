@@ -11,43 +11,64 @@ Systém pomocou ktorého budem ponúkať služby si naprogramujem sám keďže j
 
 Na implementáciu samotnej web aplikácie použijem Vue \cite{vue} a Node.js \cite{Node} javascript frameworky. Databáza nebude potrebná keďže stránka nebude použivať žiadne perzistenté dáta.
 
+Taktiež implementujem jednoduchý informačný system pre moje vnútorné použitie ktorý bude naprogramovaný z rovnakými frameworkami. Systém buďe obsahovať databázový systém ktorý bude udržiavať konkrétne objednávky a ich stav. Prvotný stav objenávky bude vytvorený pomocou web aplikácie po vyplnení formulára. Ďalšie zmeny stavou bude možné upraviť pomocou danej aplikácie.
+
 Toto riešenie som si vybral pretože mám skúsenosti z web developmentom a neoplatí sa mi prenajímať celí e-shop keďže ponúkam služby a nie fyzický produkt.
 
 \section{Výber virtualného prostredia}
 \label{vyber}
 
-Aby som mohol svoj systém mať prístupný, budem si musieť prenajať virtuálny server kde nasadím môj systém. Nebudem potrebovať veľký výkon keďže očakávam že na začiaktu nebudem počet objenávok veľký. Ak sa počet návštev zvečší, použijem lepšie parametre. Tabuľka \ref{serveri} popisuje kritéria výberu jednodlivý systémov. Pre každý systém som si zvolil tieto alebo podobné parametre:
+Aby bola moja webová aplikácie pre zákazníkov dostupná, budem si musieť prenajať virtuálny server kde nasadím môj systém. Nebudem potrebovať veľký výkon keďže očakávam že na začiaktu nebude počet objenávok veľký. Ak sa počet návštev zvečší, použijem lepšie parametre. Tabuľka \ref{serveri} popisuje kritéria výberu jednodlivý systémov. Pre každý systém som si zvolil tieto alebo podobné parametre:
 
 \begin{itemize}
   \item CPU -- 2 jadrá
   \item CPU frekvencia -- 2-2.5\,Ghz
   \item Disk -- 20-50\,GB
 \end{itemize}
-Každá hodnota je obodovaná stupnicou -10 po 10. V prvom stĺpci je súčet všetkých hodnotení v riadku. Z tabulky je zrejmé že Linode vyhráva a budem ho teda používať ako virtuálny server pre moju stránku.
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    Názov      & Váha & 1                    & 2                   & 3                   & 4                   & 5                  \\
+    \hline
+    Cena       & 3    & $>=$75.01\,\texteuro & 75-40.01\,\texteuro & 40-20.01\,\texteuro & 20-15.01\,\texteuro & 15-0.01\,\texteuro \\
+    RAM        & 1    & 0.5\,GB              & 1\,GB               & 2\,GB               & 4\,GB               & 8\,GB              \\
+    Prenos dát & 1.5  & $<=$500\,GB          & 501-1000\,GB        & 1-2\,TB             & 2-5\,TB             & $>$5\,TB           \\
+    \hline
+  \end{tabular}
+  \caption{Stupnice pre vybrané stĺpce}
+  \label{serveri_2}
+\end{table}
+Každá hodnota je obodovaná stupnicou -5 po 5. V prvom stĺpci je súčet všetkých hodnotení v riadku. Hodnotenie stĺpcov Cena, RAM a prenos dát sú hodnotené podla tabuľky \ref{serveri_2}. Ostatné stĺpce sú hodnotené bez tabulky stupnice a hodnoty sú určené podla môjho zváženia. Z tabulky \ref{serveri} je zrejmé že Linode vyhráva a budem ho teda používať ako virtuálny server pre moju stránku.
 
 
 \begin{landscape}
-\begin{table}[htbp]
-  \centering
-  \begin{tabular}{|c|l|c|c|c|c|c|c|}
-    \hline
-    Body & Názov & Cena za mesiac & Ram & Prenos dát & In/Out rýchlosť  & Poznámka\\
-    \hline
-    (25) & \textbf{Linode} & 10.14\,\texteuro\ (9)  & 2\,GB (7) & 2 TB (6) & 40/1 Gbps (8) & Zdielané CPU (-3) \\
-    \hline
-    (24) & Kametra & 6.08\,\texteuro\ (10) & 2\,GB (7) & 1 TB (5) & 10/10 Gbps (7) & Zdielané CPU (-3) \\
-    \hline
-    (18) & Liquidweb & 25.35\,\texteuro\ (2) & 2\,GB (7) & 10 TB (9) & - (0) & - (0) \\
-    \hline
-    (18) & CloudSigma  & 20\,\texteuro\ (4) & 4\,GB (8) & 5 TB (7) & Unlimited (-1) & - (0) \\
-    \hline
-    (20) & Amazon Ligthsail & 20.28\,\texteuro\ (3)  & 4\,GB (8) & 3 TB (5) & 900/900 Mbps (4) & - (0) \\
-    \hline
-    (22) & Vultr  & 20.28\,\texteuro\ (3) & 4\,GB (8) & 3 TB (5) & 2/2 Gbps (6) & - (0) \\
-    \hline
-  \end{tabular}
-  \caption{Porovnanie ponúk}
-  \label{serveri}
-\end{table}
+  \begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|l|c|c|c|c|c|c|}
+      \hline
+      Body   & Názov            & Cena za mesiac         & RAM       & Prenos dát  & In/Out rýchlosť  & Poznámka          \\
+      \hline
+      (23.5) & \textbf{Linode}  & 10.14\,\texteuro\ (15) & 2\,GB (3) & 2 TB (4.5)  & 40/1 Gbps (4)    & Zdielané CPU (-3) \\
+      \hline
+      (22.5) & Kametra          & 6.08\,\texteuro\ (15)  & 2\,GB (3) & 1 TB (4.5)  & 10/10 Gbps (3)   & Zdielané CPU (-3) \\
+      \hline
+      (18.5) & Liquidweb        & 25.35\,\texteuro\ (9)  & 2\,GB (3) & 10 TB (7.5) & - (-1)           & - (0)             \\
+      \hline
+      (21)   & CloudSigma       & 20\,\texteuro\ (12)    & 4\,GB (4) & 5 TB (6)    & - (-1)           & - (0)             \\
+      \hline
+      (20)   & Amazon Ligthsail & 20.28\,\texteuro\ (9)  & 4\,GB (4) & 3 TB (6)    & 900/900 Mbps (1) & - (0)             \\
+      \hline
+      (21)   & Vultr            & 20.28\,\texteuro\ (9)  & 4\,GB (4) & 3 TB (6)    & 2/2 Gbps (2)     & - (0)             \\
+      \hline
+    \end{tabular}
+    \caption{Porovnanie ponúk}
+    \label{serveri}
+  \end{table}
+\end{landscape}
+
+\begin{landscape}
+
 \end{landscape}
 

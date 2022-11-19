@@ -1,14 +1,20 @@
 \chapter{Stratégia}
 
-Činnosť mojej živnosti nebude produkt ale služba. Cieľom služby bude priniesť do informačného systému ľahkú rozšíritelnosť, dostupnosť služieb a jednoduché pozorovanie stavu systému. Jadro ponúkanej služby bude vytvorenie produkčného prostredia pre akýchkoľvek informačný systém, e-shop atď. pomocou systému Kubernetes. Kubernetes je orchestračný nástroj ktorý umožnuje nasadenie aplikácie pomocou docker kontainerov ktoré obsahujú komopnenty aplikácie. 
+V nasledujúcich sekcíach je popísana stratégia môjho živnostníctva
+
+\section{Definícia hlavnej služby}
+Činnosť mojej živnosti neb1ude produkt ale služba. Cieľom služby bude priniesť do informačného systému ľahkú rozšíritelnosť, dostupnosť služieb a jednoduché pozorovanie stavu systému. Jadro ponúkanej služby bude vytvorenie produkčného prostredia pre akýchkoľvek informačný systém, e-shop atď. pomocou systému Kubernetes. Kubernetes je orchestračný nástroj ktorý umožnuje nasadenie aplikácie pomocou docker kontainerov ktoré obsahujú komopnenty aplikácie. 
 
 Bežný e-shop potrebuje k funkčnosti databázu, samotnú webovú aplikáciu a ak je e-shop večší, tak potrebuje aj kašovací server a load balancing. Všetky tieto komopnenty musia spolu komunikovať aby bol e-shop funkčný. Ak majitel alebo programátor e-shopu niesú zoznámený z technológiamy ako Docker a Kubernetes, budú mať všetky komonenty spustené na jednom serveri bez virtualizácie. Tento spôsob nasadenia je tažko udržovaťelný. Súčastou mojej služby bude prekonvertovanie každého komponentu do samostatnej jednotky (Docker image) a pomocou Kubernetes systému vytvorím produkčné prostredie pre daný eshop.
 
 Čím viac bude informačný systém rásť, bude ho exponenciálne tažšie udržovať a ďalej ho rozšírovať. Kubernetes dovoľuje dynamicky zvišovať dostupný výpočetný výkon, dokáže automaticky spustiť novú verziu informačného systému bez žiadneho výpadku, zvyšovať inštancie komponentov informačného systému a tým rozdeliť zátaž na viacej jednodlivých inštancí rovnakého komponentu alebo automaticky reštartovať akýkoľvek komponent pri vápadku. 
 
+\section{Ostanté služby}
 Zákazník si bude môcť taktiež vybrať možnosť dlhodobej podpory k môjmu vytvorenému systému Kubernetes. Ak by sa vyskitol problém, budem dostupný a schopný ho opraviť. Budem si udržovať databázu vytvorených Kubernetes systémov a riešenie problém sa mi jednoznačne ulachčí. Nebudem ale ponúkať podboru Kubernetes systémom ktoré vytvoril niekto iný keďže pravdepodobne nebudem dostupnú dokumentáciu k spôsobou nasadenia.
 
-Ďalšiu službu ktorú budem ponúkať bude vytvorenie webového portálu pomocou ktorého bude možné sledovať dôležité informácie o chode systému ako napríklad vytaženie systému, počet návštev, uptime atď.
+Ďalšiu doplnkovú službu ktorú budem ponúkať bude vytvorenie webového portálu pomocou ktorého bude možné sledovať dôležité informácie o chode systému ako napríklad vytaženie systému, počet návštev, uptime atď.
+
+Službu budem poskytovať menšiemu počtu zákazníkov keďže už jedna objednávka môže celkom časovo náročná, hlavne ak budem ďalej ponúkať aj dlhodobú podporu systému.
 
 
 \section{Doručovanie}
@@ -19,11 +25,11 @@ Nebudem doručovať žiadny fyzický produkt.
 
 Cielený zákazníci budú jednotlivci, skupiny ludí alebo organizácie ktoré už majú ustanovený informačný systém a stáli výskyt navštevníkov alebo zákazníkov. Moju službu budú výhladávať pretože už pradepodobne nebudú schopný ďalej rozšírovať jejich informačný systém alebo ich to stojí vela času a penazí. Ďalej budem cieliť svoje služby aj na zákazníkov ktorý si práve vytvárajú čerstvý informačný systém a potrebujú k nemu vytvoriť spolahlivé produkčné prostredie.
 
-Služby budú dostupné zákazníkom iba celej európy pokial bude možné zo zákazníkom komunikovať anglicky.
+Služby budú dostupné zákazníkom európy pokial bude možné zo zákazníkom komunikovať anglicky.
 
 \section{Infraštruktúra}
 
-Ponúkanú službe je možné rozdeliť na dva typy z pohľadu infraštruktúry:
+Ponúkanú službu je možné rozdeliť na dva typy z pohľadu infraštruktúry:
 \begin{itemize}
   \item \textbf{Infraštruktúra neviditelná zákazníkovy}\,--\,Hardware na ktorých bude hostovaný systém Kubernetes bude môj vyrtuálny stroj ktorý budem mať prenajatý.
   \item \textbf{Zákazníkova infraštruktúra}\,--\,Ak už má zákazník dostatočné výkonný hardware na ktorom chce hostovať svoj informačný systém, využijem ho namiesto mojich prenajatých serverov.
