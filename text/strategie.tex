@@ -1,9 +1,9 @@
 \chapter{Stratégia}
 
-V nasledujúcich sekcíach je popísana stratégia môjho živnostníctva
+V nasledujúcich sekcíach je popísana stratégia môjho živnostníctva.
 
 \section{Definícia hlavnej služby}
-Činnosť mojej živnosti neb1ude produkt ale služba. Cieľom služby bude priniesť do informačného systému ľahkú rozšíritelnosť, dostupnosť služieb a jednoduché pozorovanie stavu systému. Jadro ponúkanej služby bude vytvorenie produkčného prostredia pre akýchkoľvek informačný systém, e-shop atď. pomocou systému Kubernetes. Kubernetes je orchestračný nástroj ktorý umožnuje nasadenie aplikácie pomocou docker kontainerov ktoré obsahujú komopnenty aplikácie. 
+Činnosť mojej živnosti nebude produkt ale služba. Cieľom služby bude priniesť do informačného systému ľahkú rozšíritelnosť, dostupnosť služieb a jednoduché pozorovanie stavu systému. Jadro ponúkanej služby bude vytvorenie produkčného prostredia pre akýchkoľvek informačný systém, e-shop atď. pomocou systému Kubernetes. Kubernetes je orchestračný nástroj ktorý umožnuje nasadenie aplikácie pomocou docker kontainerov ktoré obsahujú komopnenty aplikácie. 
 
 Bežný e-shop potrebuje k funkčnosti databázu, samotnú webovú aplikáciu a ak je e-shop večší, tak potrebuje aj kašovací server a load balancing. Všetky tieto komopnenty musia spolu komunikovať aby bol e-shop funkčný. Ak majitel alebo programátor e-shopu niesú zoznámený z technológiamy ako Docker a Kubernetes, budú mať všetky komonenty spustené na jednom serveri bez virtualizácie. Tento spôsob nasadenia je tažko udržovaťelný. Súčastou mojej služby bude prekonvertovanie každého komponentu do samostatnej jednotky (Docker image) a pomocou Kubernetes systému vytvorím produkčné prostredie pre daný eshop.
 
@@ -36,26 +36,5 @@ Ponúkanú službu je možné rozdeliť na dva typy z pohľadu infraštruktúry:
 \end{itemize}
 
 \section{Cenová stratégia}
-
-Cena mojej služby bude hlavne záležať na tom čo všetko bude zákazník odomna očakávať a aký veľký informačný systém budem nasadzovať alebo udržovať. Ak bude zákazník iba žiadať nasadenie systému Kubernetes, cena služby bude večší jednorázový poplatok v rozmezí 200 až 500\,\texteuro\ v pomere veľkosti informačného systému. Ak bude ale ďalej očakávať aj dlhodobú podporu, mesačný poplatok bude v rozmezí 100 až 200\,\texteuro.
-
-Ak bude súčastou služby aj infraštruktúra, zákazník si bude platit infraštruktúru samostatne.
-
-% \begin{table}[htbp]
-%   \centering
-%   \caption{Rozdelenie predajnej ceny}
-%   \label{rozdelenie_ceny}
-%   \begin{tabular}{|c|c|}
-%     \hline
-%     Percentá [\%] & Vysvetlenie \\
-%     \hline
-%     \hline
-%     100 & Nákup dielu \\
-%     \hline
-%     15 & Poštovné (Môže sa líšiť) \\
-%     \hline
-%     15 & Zisk (Môže sa líšiť) \\
-%     \hline
-%   \end{tabular}
-% \end{table}
+Cena mojej služby bude hlavne záležať na tom čo všetko bude zákazník odomna očakávať a aký veľký informačný systém budem nasadzovať alebo udržovať. Ak bude zákazník iba žiadať nasadenie systému Kubernetes, cena služby bude večší jednorázový poplatok v rozmezí 500 až 1000\,\texteuro\ v pomere veľkosti informačného systému. Ak bude ale ďalej očakávať aj dlhodobú podporu, mesačný poplatok bude v rozmezí 100 až 200\,\texteuro. Ak bude súčastou služby aj infraštruktúra, zákazník si bude platit infraštruktúru samostatne.
 

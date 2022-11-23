@@ -28,12 +28,12 @@ Z kapitoly \ref{vyber} vyšlo že Linode je najlepšia volba pre virtuálne pros
   \label{img:four}
 \end{figure}
 
-\noindent Ako prvé som nastavil potrebné bezpečnostné opatrenia:
-\begin{itemize}
-  \item Nastavenie firewallu pomocou iptables,
-  \item Nastavenie prihlásenia iba cez ssh klúč,
-  \item Nainštalovať všetky potrebné nástroje a aplikácie na spustenie mojej vyvinutej aplikácie,
-  \item Nastavenie automatický update balíčkov z verziami ktoré obsahujú bezpečnostné vylepšenia.
-\end{itemize}
+Ako operáčný systém zvolím Linux Debian keďže mám skúsenosti s týmto operačným systémom a je na ňom jednoduchšie vytvárať a hostovať webové aplikácie. Taktiež mám už s ním skúsenosti.
 
-Další krok bude zakúpenie doménového mena pomocou stránky \cite{domain}. Aby bolo možné doménu využívať doménu na internete, bude potreba vytvorit globálny preklad domény na IP adresu môjho serveru, na toto využijem Google Cloud DNS \cite{dns}. Keďže bude stránka podporvať protokol HTTPS, potrebuje aj certifikát. Certifikát budem kupovať na moje doménove meno cez ssls.com \cite{cert}. Predpokladná suma pre doménu, DNS preklad a certifikát je 9\,\texteuro~na mesiac. V cene pre DNS preklad je 10 miliónov prekladov za mesiac čo by na začiatku predaja mojich služieb bude stačiť. cene Platobná braná z ktorú ingergrujem do mojej stránky bude paypal. Pre frontend aplikácie použuijem tému Now UI Kit \cite{vue_kit}.
+\section{Technické kroky implementácie systému}
+
+Ako prvé by som nastavil potrebné bezpečnostné opatrenia, konkrétne by som nastavil firewall pomocou programu \texttt{iptables} ktorý umožnuje veľmi detailné omezenie sieťovej prevádky. Napríklad zakážem všetky porty okrem 22 (ssh) a 443 (https), zakážem ICMP protokol a IPv6. Ďalej nastvím prihlásenie iba cez ssh klúč ktorý si dôkladne uložím. Nainštalujem všetky potrebné nástroje a aplikácie na spustenie mojej vyvinutej aplikácie. V tomto prípade by to boly programi \texttt{npm}, \texttt{nvm}, \texttt{nginx}. Taktiež by som zapol automatický update balíčkov z verziami ktoré obsahujú bezpečnostné vylepšenia aby bol systém up to date. Prístup do vnútornej časti systému ktorý bude ukladať objednávky bude možný len pomocou hesla a dvoj faktorovej autentizácie.
+
+Další krok bude zakúpenie doménového mena pomocou stránky \cite{domain}. Aby bolo možné doménu využívať doménu na internete, bude potreba vytvorit globálny preklad domény na IP adresu môjho serveru, na toto využijem Google Cloud DNS \cite{dns}. Keďže bude stránka podporvať protokol HTTPS, potrebuje aj X509 certifikát. Certifikát budem kupovať na moje doménove meno cez ssls.com \cite{cert}. Predpokladná suma pre doménu, DNS preklad a certifikát je 9\,\texteuro~na mesiac. V cene pre DNS preklad je 10 miliónov prekladov za mesiac čo by na začiatku predaja mojich služieb bude stačiť. Platobná braná ktorú ingergrujem do mojej stránky bude paypal. Pre frontend aplikácie použuijem tému Now UI Kit \cite{vue_kit}.
+
+Linode a Vue framework som si vyskúšal spustiť nažive a momentálne je aplikácia dostupná na adrese \url{http://172.105.69.134:5173}.

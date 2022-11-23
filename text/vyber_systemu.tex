@@ -1,5 +1,5 @@
 \chapter{Výber systému}
-
+\label{ch:vyber}
 Systém pomocou ktorého budem ponúkať služby si naprogramujem sám keďže jeho obsah bude relatívne malý. Bude sa skladať z nasledovných častí:
 
 \begin{itemize}
@@ -9,9 +9,9 @@ Systém pomocou ktorého budem ponúkať služby si naprogramujem sám keďže j
   \item Stránka z popisom mojich služieb
 \end{itemize}
 
-Na implementáciu samotnej web aplikácie použijem Vue \cite{vue} a Node.js \cite{Node} javascript frameworky. Databáza nebude potrebná keďže stránka nebude použivať žiadne perzistenté dáta.
+Na implementáciu samotnej web aplikácie pre zákazníkov použijem Vue \cite{vue} a Node.js \cite{Node} javascript frameworky. Databáza nebude potrebná keďže stránka nebude použivať žiadne perzistenté dáta.
 
-Taktiež implementujem jednoduchý informačný system pre moje vnútorné použitie ktorý bude naprogramovaný z rovnakými frameworkami. Systém buďe obsahovať databázový systém ktorý bude udržiavať konkrétne objednávky a ich stav. Prvotný stav objenávky bude vytvorený pomocou web aplikácie po vyplnení formulára. Ďalšie zmeny stavou bude možné upraviť pomocou danej aplikácie.
+Namiesto databázy v aplikácií pre zákazníkov implementujem jednoduchý informačný system pre moje vnútorné použitie ktorý bude naprogramovaný z rovnakými frameworkami. Systém buďe obsahovať databázový systém ktorý bude udržiavať konkrétne objednávky a ich stav. Prvotný stav objenávky bude vytvorený pomocou web aplikácie po vyplnení formulára. Dáta sa budú posielať pomocou REST API rozhrania. Ďalšie zmeny stavou bude možné upraviť pomocou danej aplikácie. 
 
 Toto riešenie som si vybral pretože mám skúsenosti z web developmentom a neoplatí sa mi prenajímať celí e-shop keďže ponúkam služby a nie fyzický produkt.
 
@@ -40,8 +40,7 @@ Aby bola moja webová aplikácie pre zákazníkov dostupná, budem si musieť pr
   \caption{Stupnice pre vybrané stĺpce}
   \label{serveri_2}
 \end{table}
-Každá hodnota je obodovaná stupnicou -5 po 5. V prvom stĺpci je súčet všetkých hodnotení v riadku. Hodnotenie stĺpcov Cena, RAM a prenos dát sú hodnotené podla tabuľky \ref{serveri_2}. Ostatné stĺpce sú hodnotené bez tabulky stupnice a hodnoty sú určené podla môjho zváženia. Z tabulky \ref{serveri} je zrejmé že Linode vyhráva a budem ho teda používať ako virtuálny server pre moju stránku.
-
+Každá hodnota je obodovaná stupnicou 0 po 5. V prvom stĺpci je súčet všetkých hodnotení v riadku. Hodnotenie stĺpcov Cena, RAM a prenos dát sú hodnotené podla tabuľky \ref{serveri_2}. Ostatné stĺpce sú hodnotené bez tabulky stupnice a hodnoty sú určené podla môjho zváženia. Tieto stĺpce môžu mať aj negatívne hotnoty do -5. Z tabuľky \ref{serveri} je zrejmé že \textbf{Linode} vyhráva a budem ho teda používať ako virtuálny server pre moju stránku.
 
 \begin{landscape}
   \begin{table}[h!]
