@@ -1,26 +1,26 @@
 \chapter{Prevádzka systému}
 
-V nasledujúcich sekcíach je popísaná prevádzka systému. Konkrétnejšie zálohovanie a obnovy pri havárií, dostupnosť a administratíva webových aplikácií.
+V nasledujúcich sekciách je popísaná prevádzka systému. Konkrétnejšie zálohovanie a obnovy pri havárií, dostupnosť a administratíva webových aplikácií.
 
 \section{Bezpečnosť dát}
 \label{sec}
-Ako som spomínal v kapitole \ref{ch:vyber} informačný systém bude tvorený dvoma aplikáciami a informácie si budú vymienať pomocou REST API. Zabezpečenie pre toto API bude tvorené pomocu API klúča ktorý bude dostupný iba mňe aby náhodný ľudia na internete nemohli meniť alebo čítať moje objednávky.
+Ako som spomínal v kapitole \ref{ch:vyber} informačný systém bude tvorený dvoma aplikáciami a informácie si budú vymieňať pomocou REST API. Zabezpečenie pre toto API bude tvorené pomocou API kľúča ktorý bude dostupný iba mne aby náhodný ľudia na internete nemohli meniť alebo čítať moje objednávky.
 
-Zálohovanie databázy systému prístupného len mňe budem riešiť pravidlom 3 2 1. Budú existovať 3 zálohy:
+Zálohovanie databázového systému prístupného len mňe budem riešiť pravidlom 3 2 1. Budú existovať 3 zálohy:
 \begin{itemize}
   \item Záloha na systéme na ktorom beží aj systém
   \item Záloha na externom úložisku u mňa doma (NAS)
   \item Záloha na cloude MEGA
 \end{itemize}
-Zálohy sa budú vytvárať každý ďen a budú sa ukladať na všetky 3 spôsoby záloh. Úložiská budú udržiavať zálohy po dobu jedného mesiaca. V prípade havárie budú použité najaktualnejšie dáta na obnovu obydvoch webových aplikácií.
+Zálohy sa budú vytvárať každý ďen automaticky a budú sa ukladať na všetky 3 spôsoby záloh. Úložiská budú udržiavať zálohy po dobu jedného mesiaca. V prípade havárie budú použité najaktuálnejšie dáta na obnovu obidvoch webových aplikácií.
 
 
 \section{Dostupnosť}
 
-Zákaznícka podpora bude dostupná pomocou emailového kontaktu alebo v súrnych prípadoch telefonického/videohovorového kontaktu. Podpora bude dostupná zo začiatku môjho živnostníctva v prevádzkovej dobe, čo sú všetky pracovné dni od 8:00 do 16:00. Neskoršie by som nabral dalších zamestancov ktorý budú poskytovať 24/7/365 podporu a budú ma kontaktovať len pri vážnych problémoch.
+Zákaznícka podpora bude dostupná pomocou emailového kontaktu alebo v súrnych prípadoch telefonického/video-hovorového kontaktu. Podpora bude dostupná zo začiatku môjho živnostníctva v prevádzkovej dobe, čo sú všetky pracovné dni od 8:00 do 16:00. Neskoršie by som nabral ďalších zamestnancov ktorý budú poskytovať 24/7/365 podporu a budú ma kontaktovať len pri vážnych problémoch.
 
-Samotný systém bude dostupný stále a lehota odpovedenia na objednávku bude jeden týžden.
+Samotný systém bude dostupný stále a lehota odpovedania na objednávku bude jeden týždeň.
 
-\section{Administratíva systému a objenávok}
+\section{Administratíva systému a objednávok}
 
-Samotný kód pre webové aplikácie bude spravovaný verzovacím systémom git. Kód bude ukladaný na službe GitHub kde repozitár bude nastavený ako privátny. Ako administrátor a developer systému sa budem starať o bezpečnost systému popísanú v sekci \ref{sec}. Periodicky budem taktiež sledovať stav systémov, či všetko funguje ako má.
+Samotný kód pre webové aplikácie bude spravovaný verzovacím systémom git. Kód bude ukladaný na službe GitHub kde repozitár bude nastavený ako privátny. Ako administrátor a developer systému sa budem starať o bezpečnosť systému popísanú v sekcii \ref{sec}. Periodicky budem taktiež sledovať stav systémov, či všetko funguje ako má.

@@ -9,16 +9,16 @@ Systém pomocou ktorého budem ponúkať služby si naprogramujem sám keďže j
   \item Stránka z popisom mojich služieb
 \end{itemize}
 
-Na implementáciu samotnej web aplikácie pre zákazníkov použijem Vue \cite{vue} a Node.js \cite{Node} javascript frameworky. Databáza nebude potrebná keďže stránka nebude použivať žiadne perzistenté dáta.
+Na implementáciu samotnej web aplikácie pre zákazníkov použijem Vue \cite{vue} a Node.js \cite{Node} javascript frameworky. Databáza nebude potrebná keďže stránka nebude použivať žiadne perzistentné dáta.
 
-Namiesto databázy v aplikácií pre zákazníkov implementujem jednoduchý informačný system pre moje vnútorné použitie ktorý bude naprogramovaný z rovnakými frameworkami. Systém buďe obsahovať databázový systém ktorý bude udržiavať konkrétne objednávky a ich stav. Prvotný stav objenávky bude vytvorený pomocou web aplikácie po vyplnení formulára. Dáta sa budú posielať pomocou REST API rozhrania. Ďalšie zmeny stavou bude možné upraviť pomocou danej aplikácie. 
+Namiesto databáze v aplikácií pre zákazníkov implementujem jednoduchý informačný systém pre moje vnútorné použitie ktorý bude naprogramovaný z rovnakými frameworkami. Systém buďe obsahovať databázový systém ktorý bude udržiavať konkrétne objednávky a ich stav. Prvotný stav objednávky bude vytvorený pomocou web aplikácie po vyplnení formulára. Dáta objednávky sa budú posielať pomocou REST API rozhrania do môjho informačného systému kďe sa ďalej spracujú. Ďalšie zmeny objednávky bude možné upraviť pomocou aplikácie pre vnútorné použitie. 
 
 Toto riešenie som si vybral pretože mám skúsenosti z web developmentom a neoplatí sa mi prenajímať celí e-shop keďže ponúkam služby a nie fyzický produkt.
 
-\section{Výber virtualného prostredia}
+\section{Výber virtuálneho prostredia}
 \label{vyber}
 
-Aby bola moja webová aplikácie pre zákazníkov dostupná, budem si musieť prenajať virtuálny server kde nasadím môj systém. Nebudem potrebovať veľký výkon keďže očakávam že na začiaktu nebude počet objenávok veľký. Ak sa počet návštev zvečší, použijem lepšie parametre. Tabuľka \ref{serveri} popisuje kritéria výberu jednodlivý systémov. Pre každý systém som si zvolil tieto alebo podobné parametre:
+Aby bola moja webová aplikácie pre zákazníkov dostupná, budem si musieť prenajať virtuálny server kde nasadím môj systém. Nebudem potrebovať veľký výkon keďže očakávam že na začiatku nebude počet objednávok veľký. Ak sa počet návštev zväčší, použijem lepšie parametre. Tabuľka \ref{serveri} popisuje kritéria výberu jednotlivých systémov. Pre každý systém som si zvolil tieto alebo podobné parametre:
 
 \begin{itemize}
   \item CPU -- 2 jadrá
@@ -26,21 +26,7 @@ Aby bola moja webová aplikácie pre zákazníkov dostupná, budem si musieť pr
   \item Disk -- 20-50\,GB
 \end{itemize}
 
-\begin{table}[h!]
-  \centering
-  \begin{tabular}{|c|c|c|c|c|c|c|}
-    \hline
-    Názov      & Váha & 1                    & 2                   & 3                   & 4                   & 5                  \\
-    \hline
-    Cena       & 3    & $>=$75.01\,\texteuro & 75-40.01\,\texteuro & 40-20.01\,\texteuro & 20-15.01\,\texteuro & 15-0.01\,\texteuro \\
-    RAM        & 1    & 0.5\,GB              & 1\,GB               & 2\,GB               & 4\,GB               & 8\,GB              \\
-    Prenos dát & 1.5  & $<=$500\,GB          & 501-1000\,GB        & 1-2\,TB             & 2-5\,TB             & $>$5\,TB           \\
-    \hline
-  \end{tabular}
-  \caption{Stupnice pre vybrané stĺpce}
-  \label{serveri_2}
-\end{table}
-Každá hodnota je obodovaná stupnicou 0 po 5. V prvom stĺpci je súčet všetkých hodnotení v riadku. Hodnotenie stĺpcov Cena, RAM a prenos dát sú hodnotené podla tabuľky \ref{serveri_2}. Ostatné stĺpce sú hodnotené bez tabulky stupnice a hodnoty sú určené podla môjho zváženia. Tieto stĺpce môžu mať aj negatívne hotnoty do -5. Z tabuľky \ref{serveri} je zrejmé že \textbf{Linode} vyhráva a budem ho teda používať ako virtuálny server pre moju stránku.
+Každá hodnota je bodovaná stupnicou 0 po 5. V prvom stĺpci je súčet všetkých hodnotení v riadku. Hodnotenie stĺpcov Cena, RAM a prenos dát sú hodnotené podla tabuľky \ref{serveri_2}. Ostatné stĺpce sú hodnotené bez stupnice a hodnoty sú určené podla môjho zváženia. Tieto stĺpce môžu mať aj negatívne hodnoty do -5. Z tabuľky \ref{serveri} je zrejmé že \textbf{Linode} vyhráva a budem ho teda používať ako virtuálny server pre moju stránku.
 
 \begin{landscape}
   \begin{table}[h!]
@@ -67,7 +53,19 @@ Každá hodnota je obodovaná stupnicou 0 po 5. V prvom stĺpci je súčet všet
   \end{table}
 \end{landscape}
 
-\begin{landscape}
 
-\end{landscape}
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    Názov      & Váha & 1                    & 2                   & 3                   & 4                   & 5                  \\
+    \hline
+    Cena       & 3    & $>=$75.01\,\texteuro & 75-40.01\,\texteuro & 40-20.01\,\texteuro & 20-15.01\,\texteuro & 15-0.01\,\texteuro \\
+    RAM        & 1    & 0.5\,GB              & 1\,GB               & 2\,GB               & 4\,GB               & 8\,GB              \\
+    Prenos dát & 1.5  & $<=$500\,GB          & 501-1000\,GB        & 1-2\,TB             & 2-5\,TB             & $>$5\,TB           \\
+    \hline
+  \end{tabular}
+  \caption{Stupnice pre vybrané stĺpce}
+  \label{serveri_2}
+\end{table}
 
